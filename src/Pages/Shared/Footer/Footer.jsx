@@ -1,13 +1,10 @@
 import React from "react";
 import logo from "../../../assets/image/logo.png";
-import { FaConciergeBell } from "react-icons/fa";
-// (including website logo, name, copyright, some contact information, social media links, address, etc.)
 
 const Footer = () => {
   return (
     <footer className="footer mt-10 p-10 bg-[#fbbd23cf] text-neutral-content">
       <div>
-        {/* <FaConciergeBell style={{ fontSize: "80px" }} /> */}
         <img src={logo} className="h-20 w-20"></img>
         <p>
           END GAMES
