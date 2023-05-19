@@ -3,29 +3,35 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { FaPencilAlt, FaTrash } from "react-icons/fa";
 import { toast } from "react-hot-toast";
 import Swal from "sweetalert2";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
+  const navigate = useNavigate();
+
   const url = `http://localhost:5000/toys?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, [url]);
-  //   const {
-  //     name,
-  //     ratings,
-  //     price,
-  //     quantity,
-  //     subCategory,
-  //     photo,
-  //     seller,
-  //     email,
-  //     details,
-  //   } = toys;
+
   const handleToyUpdate = (id) => {
-    alert("hhhhhh");
+    Swal.fire({
+      title: "Are you sure You want to Update the toy?",
+      text: "",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Update it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate(`/updateToys/${id}`);
+        // <Navigate to={`/updateToys/${id}`}></Navigate>;
+      }
+    });
   };
   const handleToyDelete = (id) => {
     Swal.fire({
