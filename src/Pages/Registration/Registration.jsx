@@ -1,8 +1,16 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Registration = () => {
+  const navigate = useNavigate();
+  const { signUp } = useContext(AuthContext);
   const [accept, setAccept] = useState(false);
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || "/";
+  console.log("location in reg", location);
+  console.log("from in reg", from);
+
   const handleReg = (event) => {
     event.preventDefault();
     const displayName = event.target.name.value;
@@ -14,22 +22,24 @@ const Registration = () => {
       photoURL: photoURL,
     };
 
-    // if (password.length < 6) {
-    //   toast.error("Your password must be at least 6 characters");
-    //   return;
-    // } else {
-    //   signUp(email, password, profile)
-    //     .then(async (result) => {
-    //       // setSuccess(true);
-    //     })
-    //     .catch((error) => console.log("error from signup", error));
-    //   navigate(from, { replace: true });
-    // }
+    if (password.length < 6) {
+      toast.error("Your password must be at least 6 characters");
+      return;
+    } else {
+      signUp(email, password, profile)
+        .then(async (result) => {
+          // setSuccess(true);
+        })
+        .catch((error) => console.log("error from signup", error));
+      navigate(from, { replace: true });
+    }
   };
+
   const handleChecked = (e) => {
     setAccept(e.target.checked);
     console.log(accept);
   };
+
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col md:w-[500px]">
