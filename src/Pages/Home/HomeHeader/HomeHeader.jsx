@@ -29,7 +29,11 @@ const HomeHeader = () => {
           ></img>
         </div>
         <div className=" grid grid-cols-3 place-self-start my-10 mx-auto ">
-          <div className="col-span-3 lg:col-span-2 lg:max-w-[600px]   ">
+          <div
+            data-aos="fade-right"
+            data-aos-duration="2000"
+            className="col-span-3 lg:col-span-2 lg:max-w-[600px]   "
+          >
             <h1
               className=" text-2xl font-bold lg:text-5xl text-[#fbbd23] 
             "
@@ -37,7 +41,11 @@ const HomeHeader = () => {
               Toys That Will Bring Delight to Your Children's Faces
             </h1>
           </div>
-          <div className="hidden lg:block  place-self-end ">
+          <div
+            data-aos="fade-left"
+            data-aos-duration="2000"
+            className="hidden lg:block  place-self-end "
+          >
             <h1
               className=" text-2xl font-bold lg:text-2xl text-[#0b4027] bg-[#fbbd23] px-4 rounded
             "

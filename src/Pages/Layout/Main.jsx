@@ -1,14 +1,18 @@
 import React from "react";
-import Navabar from "../Shared/Navbar/Navabar";
+import Navbar from "../Shared/Navbar/Navbar";
 import { Outlet } from "react-router-dom";
 import Footer from "../Shared/Footer/Footer";
 
 const Main = () => {
   return (
-    <div>
-      <Navabar></Navabar>
-      <Outlet></Outlet>
-      <Footer></Footer>
+    <div className="flex flex-col min-h-screen">
+      <div className="flex-1">
+        <Navbar></Navbar>
+        <Outlet></Outlet>{" "}
+      </div>
+      <div className="mt-auto">
+        <Footer></Footer>
+      </div>
     </div>
   );
 };
