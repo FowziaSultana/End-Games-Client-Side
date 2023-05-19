@@ -31,6 +31,19 @@ const AddToy = () => {
     };
 
     console.log(aToy);
+    fetch("http://localhost:5000/toys", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(aToy),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          console.log("this is from client side add toy", data);
+          toast.success("Successfully Added a toy");
+          // form.reset();
+        }
+      });
   };
   return (
     <div className=" container mx-auto w-3/4 bg-[#F4F3F0] px-3 md:px-24 py-5 md:py-14 mt-11 rounded-lg">

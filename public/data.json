@@ -1,0 +1,226 @@
+[
+  {
+    "name": "Marvel Iron Man",
+    "ratings": "5",
+    "price": "1200",
+    "quantity": "4",
+    "subCategory": "Avengers",
+    "photo": "https://i.ibb.co/6nx92TS/5.png",
+    "seller": "Sanzida",
+    "email": "sanzida@example.com",
+    "details": "Unleash the power of Iron Man with this highly detailed action figure. Join Tony Stark on his adventures and save the world from threats!"
+  },
+
+  {
+    "name": "Transformers Optimus Prime",
+    "ratings": "4.5",
+    "price": "1500",
+    "quantity": "2",
+    "subCategory": "Transformers",
+    "photo": "https://i.ibb.co/6nx92TS/5.png",
+    "seller": "Sanzida",
+    "email": "sanzida@example.com",
+    "details": "Experience the epic battles of Transformers with Optimus Prime. Convert this figure from robot to vehicle mode and lead the Autobots to victory!"
+  },
+  {
+    "name": "DC Marvel Mashup",
+    "ratings": "4",
+    "price": "900",
+    "quantity": "8",
+    "subCategory": "DC Marvel",
+    "photo": "https://i.ibb.co/6nx92TS/5.png",
+    "seller": "Sanzida",
+    "email": "sanzida@example.com",
+    "details": " DC and Marvel had previously collaborated on a treasury edition of The Wizard of Oz, but this is the first time characters owned by both companies were used together."
+  },
+
+  {
+    "name": "Marvel Hulk",
+    "ratings": "4.2",
+    "price": "800",
+    "quantity": "6",
+    "subCategory": "Avengers",
+    "photo": "https://i.ibb.co/6nx92TS/5.png",
+    "seller": "Sanzida",
+    "email": "sanzida@example.com",
+    "details": "Gigantic, green, irradiated, mutated humanoid monster with incredible strength and an inability to control his rage"
+  },
+  {
+    "name": "Transformers Bumblebee",
+    "ratings": "4.8",
+    "price": "2000",
+    "quantity": "3",
+    "subCategory": "Transformers",
+    "photo": "https://i.ibb.co/6nx92TS/5.png",
+    "seller": "Sanzida",
+    "email": "sanzida@example.com",
+    "details": " Bumblebee is a small yellow Volkswagen Beetle."
+  },
+  {
+    "name": " 'DC Comics Flash",
+    "ratings": "4.7",
+    "price": "1500",
+    "quantity": "5",
+    "subCategory": "DC Marvel",
+    "photo": "https://i.ibb.co/6nx92TS/5.png",
+    "seller": "Sanzida",
+    "email": "sanzida@example.com",
+    "details": "The Flash is the name of several superheroes appearing in American comic books published by DC Comics. "
+  },
+
+  {
+    "name": "Marvel Thor",
+    "ratings": "4.6",
+    "price": "1100",
+    "quantity": "7",
+    "subCategory": "Avengers",
+    "photo": "https://i.ibb.co/6nx92TS/5.png",
+    "seller": "Sophia",
+    "email": "sophi@gmail.com",
+    "details": "lorem"
+  },
+  {
+    "name": "Transformers Megatron",
+    "ratings": "3.9",
+    "price": "1800",
+    "quantity": "2",
+    "subCategory": "Transformers",
+    "photo": "https://i.ibb.co/6nx92TS/5.png",
+    "seller": "Sophia",
+    "email": "sophi@gmail.com",
+    "details": "lorem"
+  },
+  {
+    "name": "Marvel Black Widow",
+    "ratings": "4.3",
+    "price": "1000",
+    "quantity": "9",
+    "subCategory": "Avengers",
+    "photo": "https://i.ibb.co/6nx92TS/5.png",
+    "seller": "Sophia",
+    "email": "sophi@gmail.com",
+    "details": "lorem"
+  },
+
+  {
+    "name": "DC Comics Wonder Woman",
+    "ratings": "4.7",
+    "price": "1100",
+    "quantity": "5",
+    "subCategory": "DC Marvel",
+    "photo": "https://i.ibb.co/6nx92TS/5.png",
+    "seller": "Fowzia",
+    "email": "mzia16813@gmail.com",
+    "details": "Unleash the power of Wonder Woman and join her in the fight against evil. This figure embodies strength, courage, and compassion!"
+  },
+  {
+    "name": "Marvel Captain America",
+    "ratings": "4.8",
+    "price": "1300",
+    "quantity": "3",
+    "subCategory": "Avengers",
+    "photo": "https://i.ibb.co/6nx92TS/5.png",
+    "seller": "Fowzia",
+    "email": "mzia16813@gmail.com",
+    "details": "Become a hero with Captain America and defend justice and freedom. This figure represents unwavering determination and leadership!"
+  },
+  {
+    "name": "Transformers Starscream",
+    "ratings": "4.3",
+    "price": "1800",
+    "quantity": "2",
+    "subCategory": "Transformers",
+    "photo": "https://i.ibb.co/6nx92TS/5.png",
+    "seller": "Fowzia",
+    "email": "mzia16813@gmail.com",
+    "details": "Join the Decepticons with Starscream and unleash chaos and destruction. This figure is highly detailed and ready for battle!"
+  },
+  {
+    "name": "DC Comics Superman",
+    "ratings": "4.9",
+    "price": "1600",
+    "quantity": "4",
+    "subCategory": "DC Marvel",
+    "photo": "https://i.ibb.co/6nx92TS/5.png",
+    "seller": "Benjamin",
+    "email": "benjamin@example.com",
+    "details": "Soar through the skies with Superman and protect the world from any threat. This figure captures the power and iconic status of the Man of Steel!"
+  },
+  {
+    "name": "Marvel Spider-Man",
+    "ratings": "4.6",
+    "price": "1000",
+    "quantity": "6",
+    "subCategory": "Avengers",
+    "photo": "https://i.ibb.co/6nx92TS/5.png",
+    "seller": "Benjamin",
+    "email": "benjamin@example.com",
+    "details": "Swing into action with Spider-Man and experience the thrill of being a friendly neighborhood superhero. This figure is ready to take on any challenge!"
+  },
+  {
+    "name": "Transformers Soundwave",
+    "ratings": "4.2",
+    "price": "1900",
+    "quantity": "3",
+    "subCategory": "Transformers",
+    "photo": "https://i.ibb.co/6nx92TS/5.png",
+    "seller": "Benjamin",
+    "email": "benjamin@example.com",
+    "details": "Join the Decepticons with Soundwave and infiltrate enemy lines. This figure includes a transforming cassette player and loyal minions!"
+  },
+  {
+    "name": "DC Comics Batman",
+    "ratings": "4.5",
+    "price": "1500",
+    "quantity": "4",
+    "subCategory": "DC Marvel",
+    "photo": "https://i.ibb.co/6nx92TS/5.png",
+    "seller": "Benjamin",
+    "email": "benjamin@example.com",
+    "details": "Become the Dark Knight with Batman and protect Gotham City from its darkest threats. This figure includes iconic gadgets and a cape that glides!"
+  },
+  {
+    "name": "Marvel AntMAN",
+    "ratings": "4.7",
+    "price": "1300",
+    "quantity": "3",
+    "subCategory": "Avengers",
+    "photo": "https://i.ibb.co/6nx92TS/5.png",
+    "seller": "James",
+    "email": "james@example.com",
+    "details": "Embrace the power of Antman and wield the Multiverse. This figure captures the strength and brings the excitement of multiverse to life!"
+  },
+  {
+    "name": "Transformers Optimus Prime",
+    "ratings": "4.5",
+    "price": "1500",
+    "quantity": "2",
+    "subCategory": "Transformers",
+    "photo": "https://i.ibb.co/6nx92TS/5.png",
+    "seller": "James",
+    "email": "james@example.com",
+    "details": "Experience the epic battles of Transformers with Optimus Prime. Convert this figure from robot to vehicle mode and lead the Autobots to victory!"
+  },
+  {
+    "name": "Marvel Thor",
+    "ratings": "4.6",
+    "price": "1100",
+    "quantity": "7",
+    "subCategory": "Avengers",
+    "photo": "https://i.ibb.co/6nx92TS/5.png",
+    "seller": "James",
+    "email": "james@example.com",
+    "details": "lorem"
+  },
+  {
+    "name": "Marvel Black Widow",
+    "ratings": "4.3",
+    "price": "1000",
+    "quantity": "9",
+    "subCategory": "Avengers",
+    "photo": "https://i.ibb.co/6nx92TS/5.png",
+    "seller": "Ema",
+    "email": "ema@gmail.com",
+    "details": "lorem"
+  }
+]

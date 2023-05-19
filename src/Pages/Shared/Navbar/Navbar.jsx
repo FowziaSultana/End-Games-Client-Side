@@ -64,6 +64,7 @@ const Navbar = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100  rounded-box w-52 text-[#fbbd23] "
             >
               {navItems}
+              {user ? logedNavItems : <></>}
             </ul>
           </div>
           <img className="w-14 h-14" src={logo}></img>
