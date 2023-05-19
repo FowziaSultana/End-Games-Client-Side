@@ -3,6 +3,7 @@ import logo from "../../../assets/image/logo.png";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import Loader from "../Loader/Loader";
 
 const Navbar = () => {
   const { user, logOut, loading } = useContext(AuthContext);
@@ -11,9 +12,19 @@ const Navbar = () => {
   };
 
   if (loading) {
-    return;
+    return <Loader></Loader>;
   }
 
+  const logedNavItems = (
+    <>
+      <li>
+        <Link to={"/myToys"}>My Toy</Link>
+      </li>
+      <li>
+        <Link to={"/addToy"}>Add a Toy</Link>
+      </li>
+    </>
+  );
   const navItems = (
     <>
       <li>
@@ -61,6 +72,7 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1  text-[#fbbd23] ">
             {navItems}
+            {user ? logedNavItems : <></>}
           </ul>
         </div>
         <div className="navbar-end">

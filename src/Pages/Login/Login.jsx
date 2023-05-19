@@ -54,7 +54,7 @@ const Login = () => {
           <p className="py-4 w-2/3 mx-auto">
             Don't Have an Account?{" "}
             <Link
-              //   state={{ from: location?.state?.from }}
+              state={{ from: location?.state?.from }}
               className="link-info  hover:underline "
               to={"/registration"}
             >
