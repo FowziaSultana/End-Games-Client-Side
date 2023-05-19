@@ -1,45 +1,50 @@
-import React from "react";
+import React, { useContext } from "react";
 import { toast } from "react-hot-toast";
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Login = () => {
+  const { signIn, googleSignUp, setLoading } = useContext(AuthContext);
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || "/";
+  const navigate = useNavigate();
+
   const handleLogin = (event) => {
     //email sign in func
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    toast.success(email + " " + password);
 
-    // signIn(email, password)
-    //   .then((result) => {
-    //     const loggedUser = result.user;
-    //     console.log(loggedUser);
-    //     toast.success("Successfully logged in!!");
-    //     event.target.reset();
-    //     navigate(from, { replace: true });
-    //   })
-    //   .catch((err) => {
-    //     const mess = err.message;
-    //     toast.error(mess);
-    //   });
+    signIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        toast.success("Successfully logged in!!");
+        event.target.reset();
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        const mess = err.message;
+        toast.error(mess);
+      });
   };
 
   const handleGoogleLogin = () => {
     //google  sign in func
-    // googleSignUp()
-    //   .then((res) => {
-    //     const user = res.user;
-    //     toast.success("successfully logged in with gmail");
-    //     navigate(from, { replace: true });
-    //   })
-    //   .catch((err) => {
-    //     console.log("err from google login", err);
-    //     const message = err.message;
-    //     toast.error(message);
-    //     setLoading(false);
-    //     navigate("/login");
-    //   });
+    googleSignUp()
+      .then((res) => {
+        const user = res.user;
+        toast.success("successfully logged in with gmail");
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        console.log("err from google login", err);
+        const message = err.message;
+        toast.error(message);
+        setLoading(false);
+        navigate("/login");
+      });
   };
   return (
     <div className="hero min-h-screen bg-base-200 ">

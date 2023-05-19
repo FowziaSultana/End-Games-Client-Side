@@ -2,12 +2,18 @@ import React, { useContext } from "react";
 import logo from "../../../assets/image/logo.png";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = () => {
-  //const { user, logout } = useContext(Authcontext);
-  // const handlelogOut = () => {
-  //   logout();
-  // };
+  const { user, logOut, loading } = useContext(AuthContext);
+  const handlelogOut = () => {
+    logOut();
+  };
+
+  if (loading) {
+    return;
+  }
+
   const navItems = (
     <>
       <li>
@@ -58,21 +64,18 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link to={"/login"} className="btn btn-outline btn-warning">
-            Login
-          </Link>
-          {/* {user ? (
-          <button
-            onClick={handlelogOut}
-            className="btn btn-outline btn-warning"
-          >
-            Logout
-          </button>
-        ) : (
-          <Link to={"/login"} className="btn btn-outline btn-warning">
-            Login
-          </Link>
-        )} */}
+          {user ? (
+            <button
+              onClick={handlelogOut}
+              className="btn btn-outline btn-warning"
+            >
+              Logout
+            </button>
+          ) : (
+            <Link to={"/login"} className="btn btn-outline btn-warning">
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import app from "../Firebase/Firebase.config";
 import {
   GoogleAuthProvider,
@@ -32,7 +32,33 @@ const AuthProvider = ({ children }) => {
     toast.success("User successfully created");
     return username;
   };
-  const authInfo = { user, loading, signUp };
+
+  const signIn = (email, password) => {
+    // setLoading(true);
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+  const googleSignUp = () => {
+    setLoading(true);
+    return signInWithPopup(auth, googleProvider);
+  };
+  const logOut = () => {
+    setLoading(true);
+    setUser(null);
+    return signOut(auth);
+  };
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (loggedUser) => {
+      console.log("logged in user inside auth state observer", loggedUser);
+      setUser(loggedUser);
+      setLoading(false);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+  const authInfo = { user, loading, signUp, signIn, googleSignUp, logOut };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
