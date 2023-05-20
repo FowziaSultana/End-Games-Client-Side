@@ -4,10 +4,14 @@ import { FaPencilAlt, FaTrash } from "react-icons/fa";
 import { toast } from "react-hot-toast";
 import Swal from "sweetalert2";
 import { Navigate, useNavigate } from "react-router-dom";
+import { data } from "autoprefixer";
+import useTitle from "../../hooks/useTitle";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
+  useTitle("MY-TOYS");
+
   const navigate = useNavigate();
 
   const url = `http://localhost:5000/toys?email=${user?.email}`;
@@ -61,11 +65,50 @@ const MyToys = () => {
       }
     });
   };
+
+  const handleHighToLow = () => {
+    fetch(`http://localhost:5000/sortToys?email=${user?.email}&&sort=HighToLow`)
+      .then((res) => res.json())
+      .then((data) => {
+        setToys(data);
+        toast.success("SUCCESSFULLY SORTED IN DESCENDING ORDER");
+      });
+  };
+  const handleLowtoHigh = () => {
+    fetch(`http://localhost:5000/sortToys?email=${user?.email}&&sort=LowToHigh`)
+      .then((res) => res.json())
+      .then((data) => {
+        setToys(data);
+        toast.success("SUCCESSFULLY SORTED IN ASCENDING ORDER");
+      });
+  };
   return (
     <div className="max-w-[800px] mx-auto mt-10  ">
-      <h1 className="text-center text-[#fbbd23] text-3xl lg:text-5xl mb-5">
-        MY TOYS
-      </h1>
+      <div className="flex justify-evenly md:justify-between items-center mb-5">
+        <h1 className="text-center text-[#fbbd23] text-3xl lg:text-5xl  ">
+          MY TOYS
+        </h1>
+
+        <div className="place-self-end grid grid-cols-1 ">
+          <span className="text-center text-[#fbbd23] text-base md:text-3xl">
+            Price:
+          </span>
+          <span className="space-y-3 md:space-y-0 md:space-x-3 flex flex-col md:flex-row">
+            <button
+              className="btn btn-warning btn-xs"
+              onClick={handleHighToLow}
+            >
+              Descending
+            </button>
+            <button
+              onClick={handleLowtoHigh}
+              className="btn btn-warning btn-xs"
+            >
+              Ascending
+            </button>
+          </span>
+        </div>
+      </div>
       <div className="overflow-x-auto w-full">
         <table className="table w-full text-black font-bold">
           {/* head */}

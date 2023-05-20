@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { toast } from "react-hot-toast";
+import useTitle from "../../hooks/useTitle";
 // bg-[#0b4027]
 const AddToy = () => {
+  useTitle("ADD-TOY");
   const { user } = useContext(AuthContext);
   const handleAdd = (event) => {
     event.preventDefault();

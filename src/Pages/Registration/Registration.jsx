@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const Registration = () => {
   const navigate = useNavigate();
@@ -8,8 +9,7 @@ const Registration = () => {
   const [accept, setAccept] = useState(false);
   const location = useLocation();
   const from = location?.state?.from?.pathname || "/";
-  console.log("location in reg", location);
-  console.log("from in reg", from);
+  useTitle("REGISTRATION");
 
   const handleReg = (event) => {
     event.preventDefault();

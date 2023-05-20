@@ -1,8 +1,10 @@
 import React from "react";
 import { toast } from "react-hot-toast";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 const UpdateToy = () => {
+  useTitle("UPDATE-TOY");
   const navigate = useNavigate();
   const toy = useLoaderData();
   const {
