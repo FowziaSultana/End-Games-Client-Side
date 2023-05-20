@@ -2,9 +2,12 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { toast } from "react-hot-toast";
 import useTitle from "../../hooks/useTitle";
+import { useNavigate } from "react-router-dom";
+
 // bg-[#0b4027]
 const AddToy = () => {
   useTitle("ADD-TOY");
+  const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const handleAdd = (event) => {
     event.preventDefault();
@@ -14,11 +17,12 @@ const AddToy = () => {
     const ratings = form.ratings.value;
     const price = form.price.value;
     const quantity = form.quantity.value;
-    const subCategory = form.subCategory.value;
     const photo = form.photo.value;
     const seller = form.seller.value;
     const email = form.email.value;
     const details = form.details.value;
+    var selectBox = document.getElementById("mySelect");
+    var subCategory = selectBox.value;
 
     const aToy = {
       name,
@@ -44,6 +48,7 @@ const AddToy = () => {
           console.log("this is from client side add toy", data);
           toast.success("Successfully Added a toy");
           form.reset();
+          navigate("/myToys");
         }
       });
   };
@@ -117,18 +122,24 @@ const AddToy = () => {
               name="quantity"
             />
           </div>
+
           <div className="form-control">
             <label className="label">
               <span className="label-text text-[#fbbd23] font-semibold text-xl">
                 Sub-Category
               </span>
             </label>
-            <input
-              type="text"
-              placeholder="Enter Sub-Category"
-              className="input input-bordered "
-              name="subCategory"
-            />
+            <div className="input-group">
+              <select id="mySelect" className="select select-bordered w-full">
+                <option disabled selected>
+                  Pick category
+                </option>
+                <option value={"DC Marvel"}>DC Marvel</option>
+                <option value={"Transformers"}>Transformers</option>
+                <option value={"Avengers"}>Avengers</option>
+                <option value={"Star_wars"}>Star_wars</option>
+              </select>
+            </div>
           </div>
           <div className="form-control">
             <label className="label">

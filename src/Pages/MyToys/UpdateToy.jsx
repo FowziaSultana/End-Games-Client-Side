@@ -28,9 +28,10 @@ const UpdateToy = () => {
     const ratings = form.ratings.value;
     const price = form.price.value;
     const quantity = form.quantity.value;
-    const subCategory = form.subCategory.value;
     const photo = form.photo.value;
     const details = form.details.value;
+    var selectBox = document.getElementById("updateCat");
+    var subCategory = selectBox.value;
 
     const aToy = {
       name,
@@ -140,14 +141,43 @@ const UpdateToy = () => {
                 Sub-Category
               </span>
             </label>
-            <input
-              type="text"
-              placeholder="Enter Sub-Category"
-              className="input input-bordered "
-              name="subCategory"
-              defaultValue={subCategory}
-              required
-            />
+            <div className="input-group">
+              <select id="updateCat" className="select select-bordered w-full">
+                <option disabled>Pick category</option>
+                {subCategory == "DC Marvel" ? (
+                  <option selected value={"DC Marvel"}>
+                    DC Marvel
+                  </option>
+                ) : (
+                  <option value={"DC Marvel"}>DC Marvel</option>
+                )}
+                {subCategory == "Transformers" ? (
+                  <option selected value={"Transformers"}>
+                    Transformers
+                  </option>
+                ) : (
+                  <option value={"Transformers"}>Transformers</option>
+                )}
+                {subCategory == "Avengers" ? (
+                  <option selected value={"Avengers"}>
+                    Avengers
+                  </option>
+                ) : (
+                  <option value={"Avengers"}>Avengers</option>
+                )}
+                {subCategory == "Star_wars" ? (
+                  <option selected value={"Star_wars"}>
+                    Star_wars
+                  </option>
+                ) : (
+                  <option value={"Star_wars"}>Star_wars</option>
+                )}
+
+                {/* <option value={"Transformers"}>Transformers</option>
+                <option value={"Avengers"}>Avengers</option>
+                <option value={"Star_wars"}>Star_wars</option> */}
+              </select>
+            </div>
           </div>
           <div className="form-control">
             <label className="label">
