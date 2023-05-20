@@ -78,7 +78,7 @@ const AddToy = () => {
               </span>
             </label>
             <input
-              type="text"
+              type="number"
               placeholder="Enter Price"
               className="input input-bordered "
               name="price"
@@ -91,10 +91,11 @@ const AddToy = () => {
               </span>
             </label>
             <input
-              type="text"
+              type="number"
               placeholder="Enter Ratings"
               className="input input-bordered "
               name="ratings"
+              step="any"
             />
           </div>
         </div>
@@ -110,7 +111,7 @@ const AddToy = () => {
               </span>
             </label>
             <input
-              type="text"
+              type="number"
               placeholder="Enter Quantity"
               className="input input-bordered "
               name="quantity"

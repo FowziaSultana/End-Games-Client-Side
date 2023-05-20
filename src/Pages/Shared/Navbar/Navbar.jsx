@@ -23,6 +23,23 @@ const Navbar = () => {
       <li>
         <Link to={"/addToy"}>Add a Toy</Link>
       </li>
+      <li className="block md:hidden">
+        <span className="flex justify-center items-center gap-2">
+          {" "}
+          <div
+            className="tooltip tooltip-bottom tooltip-warning"
+            data-tip={user?.displayName}
+          >
+            <img className="profileImage" src={user?.photoURL}></img>
+          </div>
+          <button
+            onClick={handlelogOut}
+            className="btn btn-outline btn-warning"
+          >
+            Logout
+          </button>
+        </span>
+      </li>
     </>
   );
   const navItems = (
@@ -76,15 +93,32 @@ const Navbar = () => {
             {user ? logedNavItems : <></>}
           </ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end ">
           {user ? (
-            <button
-              onClick={handlelogOut}
-              className="btn btn-outline btn-warning"
-            >
-              Logout
-            </button>
+            <div className="hidden md:block">
+              <span className="flex justify-center items-center gap-2 ">
+                {" "}
+                <div
+                  className="tooltip tooltip-left"
+                  data-tip={user?.displayName}
+                >
+                  <img className="profileImage" src={user?.photoURL}></img>
+                </div>
+                <button
+                  onClick={handlelogOut}
+                  className="btn btn-outline btn-warning"
+                >
+                  Logout
+                </button>
+              </span>
+            </div>
           ) : (
+            // <button
+            //   onClick={handlelogOut}
+            //   className="btn btn-outline btn-warning"
+            // >
+            //   Logout
+            // </button>
             <Link to={"/login"} className="btn btn-outline btn-warning">
               Login
             </Link>
