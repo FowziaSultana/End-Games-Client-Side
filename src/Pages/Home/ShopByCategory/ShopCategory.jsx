@@ -7,7 +7,9 @@ const ShopCategory = () => {
   const [toys, setToys] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/toysByCategory?cat=${tabName}`)
+    fetch(
+      `https://b7a11-toy-marketplace-server-side-fowzia-sultana.vercel.app/toysByCategory?cat=${tabName}`
+    )
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, [tabName]);
@@ -15,7 +17,6 @@ const ShopCategory = () => {
     { id: 1, title: "Avengers" },
     { id: 2, title: "DC Marvel" },
     { id: 3, title: "Transformers" },
-    { id: 4, title: "Star_wars" },
   ];
   const handleTab = (event) => {
     let selectedTab = event.target.innerHTML;

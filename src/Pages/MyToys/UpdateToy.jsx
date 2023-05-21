@@ -25,9 +25,9 @@ const UpdateToy = () => {
     const form = event.target;
 
     const name = form.name.value;
-    const ratings = form.ratings.value;
-    const price = form.price.value;
-    const quantity = form.quantity.value;
+    const ratings = parseFloat(form.ratings.value);
+    const price = parseInt(form.price.value);
+    const quantity = parseInt(form.quantity.value);
     const photo = form.photo.value;
     const details = form.details.value;
     var selectBox = document.getElementById("updateCat");
@@ -43,12 +43,15 @@ const UpdateToy = () => {
       details,
     };
 
-    console.log(aToy);
-    fetch(`http://localhost:5000/toys/${id}`, {
-      method: "PUT",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(aToy),
-    })
+    console.log(typeof ratings);
+    fetch(
+      `https://b7a11-toy-marketplace-server-side-fowzia-sultana.vercel.app/toys/${id}`,
+      {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(aToy),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
@@ -91,7 +94,7 @@ const UpdateToy = () => {
               </span>
             </label>
             <input
-              type="text"
+              type="number"
               placeholder="Enter Price"
               className="input input-bordered "
               name="price"
@@ -106,7 +109,7 @@ const UpdateToy = () => {
               </span>
             </label>
             <input
-              type="text"
+              type="number"
               placeholder="Enter Ratings"
               className="input input-bordered "
               name="ratings"
@@ -127,7 +130,7 @@ const UpdateToy = () => {
               </span>
             </label>
             <input
-              type="text"
+              type="number"
               placeholder="Enter Quantity"
               className="input input-bordered "
               name="quantity"
@@ -164,13 +167,6 @@ const UpdateToy = () => {
                   </option>
                 ) : (
                   <option value={"Avengers"}>Avengers</option>
-                )}
-                {subCategory == "Star_wars" ? (
-                  <option selected value={"Star_wars"}>
-                    Star_wars
-                  </option>
-                ) : (
-                  <option value={"Star_wars"}>Star_wars</option>
                 )}
 
                 {/* <option value={"Transformers"}>Transformers</option>

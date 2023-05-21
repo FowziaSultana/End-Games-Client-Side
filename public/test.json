@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "customerImage": "https://i.ibb.co/Bfpw24z/young-woman-with-round-glasses-yellow-sweater.webp",
+    "customerName": "Mary Hays",
+    "customerReview": "This Marvels Iron Man action figure is amazing! My kid loves playing with it for hours.",
+    "productName": "Marvels Iron Man"
+  },
+  {
+    "id": "2",
+    "customerImage": "https://i.ibb.co/VxngPgp/profilepic.webp",
+    "customerName": "Lillith Bonner",
+    "customerReview": "I bought this Transformers Optimus Prime toy for my nephew, and he can't get enough of it!",
+    "productName": "Transformers Optimus Prime"
+  },
+  {
+    "id": "3",
+    "customerImage": "https://i.ibb.co/L8MLkmy/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confide.webp",
+    "customerName": "Kylie Bray",
+    "customerReview": "The quality of this Marvel Hulk action figure is outstanding. Highly recommended.",
+    "productName": "Marvel Hulk"
+  }
+]

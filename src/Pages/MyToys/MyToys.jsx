@@ -14,7 +14,7 @@ const MyToys = () => {
 
   const navigate = useNavigate();
 
-  const url = `http://localhost:5000/toys?email=${user?.email}`;
+  const url = `https://b7a11-toy-marketplace-server-side-fowzia-sultana.vercel.app/toys?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -48,9 +48,12 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/toys/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://b7a11-toy-marketplace-server-side-fowzia-sultana.vercel.app/toys/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
@@ -67,7 +70,9 @@ const MyToys = () => {
   };
 
   const handleHighToLow = () => {
-    fetch(`http://localhost:5000/sortToys?email=${user?.email}&&sort=HighToLow`)
+    fetch(
+      `https://b7a11-toy-marketplace-server-side-fowzia-sultana.vercel.app/sortToys?email=${user?.email}&&sort=HighToLow`
+    )
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -75,7 +80,9 @@ const MyToys = () => {
       });
   };
   const handleLowtoHigh = () => {
-    fetch(`http://localhost:5000/sortToys?email=${user?.email}&&sort=LowToHigh`)
+    fetch(
+      `https://b7a11-toy-marketplace-server-side-fowzia-sultana.vercel.app/sortToys?email=${user?.email}&&sort=LowToHigh`
+    )
       .then((res) => res.json())
       .then((data) => {
         setToys(data);

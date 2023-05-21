@@ -14,9 +14,9 @@ const AddToy = () => {
     const form = event.target;
 
     const name = form.name.value;
-    const ratings = form.ratings.value;
-    const price = form.price.value;
-    const quantity = form.quantity.value;
+    const ratings = parseFloat(form.ratings.value);
+    const price = parseInt(form.price.value);
+    const quantity = parseInt(form.quantity.value);
     const photo = form.photo.value;
     const seller = form.seller.value;
     const email = form.email.value;
@@ -37,11 +37,14 @@ const AddToy = () => {
     };
 
     console.log(aToy);
-    fetch("http://localhost:5000/toys", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(aToy),
-    })
+    fetch(
+      "https://b7a11-toy-marketplace-server-side-fowzia-sultana.vercel.app/toys",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(aToy),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
@@ -137,7 +140,6 @@ const AddToy = () => {
                 <option value={"DC Marvel"}>DC Marvel</option>
                 <option value={"Transformers"}>Transformers</option>
                 <option value={"Avengers"}>Avengers</option>
-                <option value={"Star_wars"}>Star_wars</option>
               </select>
             </div>
           </div>

@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import useTitle from "../../hooks/useTitle";
+import { toast } from "react-hot-toast";
 
 const Registration = () => {
   const navigate = useNavigate();
@@ -30,7 +31,10 @@ const Registration = () => {
         .then(async (result) => {
           // setSuccess(true);
         })
-        .catch((error) => console.log("error from signup", error));
+        .catch((error) => {
+          console.log("error from signup", error);
+          navigate("/");
+        });
       navigate(from, { replace: true });
     }
   };

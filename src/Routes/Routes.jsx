@@ -25,13 +25,18 @@ const router = createBrowserRouter([
       {
         path: "/allToys",
         element: <AllToys></AllToys>,
-        loader: () => fetch("http://localhost:5000/alltoys"),
       },
       {
         path: "/singleToy/:id",
-        element: <SingleToyDetails></SingleToyDetails>,
+        element: (
+          <PrivateRoute>
+            <SingleToyDetails></SingleToyDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/toys/${params.id}`),
+          fetch(
+            `https://b7a11-toy-marketplace-server-side-fowzia-sultana.vercel.app/toys/${params.id}`
+          ),
       },
       {
         path: "/blog",
@@ -69,7 +74,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/toys/${params.id}`),
+          fetch(
+            `https://b7a11-toy-marketplace-server-side-fowzia-sultana.vercel.app/toys/${params.id}`
+          ),
       },
     ],
   },

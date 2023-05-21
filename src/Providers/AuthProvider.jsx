@@ -11,6 +11,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { toast } from "react-hot-toast";
+
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
@@ -25,7 +26,11 @@ const AuthProvider = ({ children }) => {
       .then(async (res) => {
         // await sendEmailVerification(auth.currentUser);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        toast.error(err);
+        setLoading(false);
+        setUser(null);
+      });
     await updateProfile(auth.currentUser, profile);
     const username = auth.currentUser;
     setUser({ ...username });
