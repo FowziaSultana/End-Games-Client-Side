@@ -50,9 +50,6 @@ const Navbar = () => {
       <li>
         <Link to={"/allToys"}>All Toys</Link>
       </li>
-      <li>
-        <Link to={"/blog"}>Blogs</Link>
-      </li>
     </>
   );
   return (

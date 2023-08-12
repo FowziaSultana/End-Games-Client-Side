@@ -9,7 +9,7 @@ const Reviews = () => {
       .then((data) => setRev(data));
   }, []);
   return (
-    <div className="container mx-auto my-10">
+    <div className="container mx-auto py-12">
       <h1 className="text-center text-2xl font-bold lg:text-5xl text-[#fbbd23] my-6">
         Happy Customers
       </h1>
